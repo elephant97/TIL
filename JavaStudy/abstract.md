@@ -42,6 +42,7 @@
   
 ### abstract 클래스의 abstract 메소드 구현부 작성
 * implements가 아닌 extends를 사용하여 구현
+* extends 뒤에는 상속과 동일하게 하나의 abstract class만 존재할 수 있음
 ```java
   public class MemberManagerInpl extends MemberManagerAbstract{
   }
