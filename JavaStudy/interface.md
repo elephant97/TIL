@@ -27,9 +27,11 @@
   
   > 중괄호는 인터페이스 선언을 위한 가장 상위의 중괄호만 있어야 한다.
 * 인터페이스 소스파일 이름은 보통 아무런 명시적인 단어를 지정하지 않거나, 클래스 이름 앞에 I를 붙여서 IMemberManager라고 표준한다.
+* 내부에 static이나 final 메소드가 선언되어 있으면 안된다.
 
 ### 만들어져 있는 인터페이스를 적용할 때(구현할 떄)
 * 클래스 선언문에서 클래스 이름 뒤에 implements라는 예약어를 쓴 후 인터페이스들을 나열하면 됨.
+* implements 뒤에는 여러개의 인터페이스가 올 수 있음
   ```java
   public class MemberManagerImpl implements MemberManager
   ```
