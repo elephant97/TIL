@@ -30,7 +30,9 @@
 
 ### 만들어져 있는 인터페이스를 적용할 때(구현할 떄)
 * 클래스 선언문에서 클래스 이름 뒤에 implements라는 예약어를 쓴 후 인터페이스들을 나열하면 됨.
-  > ex) public class MemberManagerImpl implements MemberManager
+  ```java
+  public class MemberManagerImpl implements MemberManager
+  ```
 * 인터페이스를 implements하면 "상속한다"고 하지 않고 "구현한다"고 한다.
 * 즉 해당 클래스에서 구현해야 하는 인터페이스를 정의함으로써 클래스에 짐을 지어 주는 것.
 * 상속은 다중상속이 되지 않지만, 인터페이스는 여러개를 implements할 수 있다.
