@@ -39,7 +39,7 @@
 ### 인터페이스의 객체 선언 방법
 * 인터페이스 객체변수명 = new 구현부();
 * 쉽게 생각하자면 상속관계에 있는 클래스 형 변환 시 부모클래스 = new 자식클래스; 형태를 생각하면 된다.
-  > 예시 구현 class) public class MemberManagerImpl implements MemberManager 
-  
-  > ⭐MemberManger memberManger = new MemberManagerImpl();
-  
+  > 예시 구현 class) public class MemberManagerImpl implements MemberManager
+```java
+  MemberManger memberManger = new MemberManagerImpl();
+```
