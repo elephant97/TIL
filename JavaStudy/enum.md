@@ -15,6 +15,7 @@ public enum OberTimeValues {
   TUSEDAY,
   WENDSDAY;
 }
+
 //상수값을 지정하지 않는 경우
 public enum OberTimeValues2 {
   MONDAY(1000),
