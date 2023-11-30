@@ -73,9 +73,9 @@ OberTimeValues2 value = OberTimeValues.MONDAY;
 ### Enum 클래스에 선언 되어있는 메소드
 * compareTo(E e)
   > 매개 변수로 enum타입과의 순서(ordinal) 차이 리턴
-  >
+  
   > 순서가 다른지 같은지 비교하는데 사용 됨.
-  >
+  
   > 같은 상수라면 0을 그렇지 않고 다르면 순서의 차이를 출력 (매개변수로 넘기는 상수 기준으로 앞에있으면 음수(-) 뒤에있으면 양수(+)를 리턴함)
 * getDeclaringClass()
   > 클래스 타입의 enum을 return함
