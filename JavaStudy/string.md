@@ -208,7 +208,7 @@
 <br>
 
 * 기본 자료형을 문자열로 변환하는 메소드
-  * **static String** valueOf(모든 자료형)
+  * **static String** valueOf(모든 자료형)   
   *모든 자료형은 null일 경우 toString메소드 사용 불가능 (NullPointerExeception발생) 그럴 때 vlaueOf 사용 시 "null"이라는 문자열 출력해줌*
 
 ### immutable(불변의)한 String의 단점을 보완하는 StringBuffer와 StringBuilder
@@ -227,5 +227,6 @@
   * Thread safe함
 * append()로 문자열 이어붙이기 가능
   > JDK 5 이상에서 String에 + 연산을 할 시 자동으로 StringBuffer로 변환해 줌 하지만, for문 같이 반복연산에는 자동 변환하지 않으니 필요함.
+  
 ** String, StringBuilder, StringBuffer세가지 중 하나의 클래스를 매개변수로 받는 작업 시 CharSequence타입으로 받는 것이 좋음**
  
