@@ -83,7 +83,7 @@
   * regionMatches(int toffset, String other, int ooffset, int len)
 
 
-### Constant Pool
+### ⭐Constant Pool
 * 객체의 재 사용을 위한 것
 ```java
   String text="Check value"
@@ -99,6 +99,8 @@
 ```
 * 이렇게 String객체를 생성하면 값이 같은 String 객체를 생성한다고 하더라도 Constant pool의 값을 재활용 하지 않고 별도의 객체 생성
 * 따라서 이런 경우 == 비교시 false가 도출 됨
+* 이때 **intern()**을 사용한다면 풀에 값을 할당하게 되어, 객체를 생성한 경우에도 ==로 비교가 가능하지만
+  **억지로 문자열 풀에 값을 할당하도록 만들면 저장 영역의 한계로 인해 메모리 청소가 일어나 전체 자바의 악영향을 끼치기 때문에 절대 사용하지 말 것**
 
 ### String에서 위치를 찾아내는 방법
 > 각 메서드의 매개변수 개수는 여러가지가 있음 
@@ -152,3 +154,78 @@
     > beginIndex부터 endIndex까지 대상 문자열을 잘라 String으로 리턴
   * subSequence(int beginIndex, int endIndex)
     > beginIndex부터 endIndex까지 대상 문자열을 잘라 CharSequence타입으로 리턴
+
+<br>
+
+* 문자열을 여러개의 string배열로 나누는 split 메소드
+  * split(String regex)
+    > reqex에 있는 정규 표현식에 맞추어 문자열을 잘라 String배열로 리턴
+  * split(String regex, int limit)
+    > reqex에 있는 정규 표현식에 맞추어 문자열을 잘라 String배열로 리턴, 이때 String배열의 크기가 limit 보다 크면 안됨
+
+### String값을 바꾸는 메소드
+
+* 문자열을 합치는 메소드와 공백을 없애는 메소드
+  * concat(String str)
+    > str을 기존 문자열 우측에 붙인 새로운 문자열 객체를 생성하여 리턴
+  * trim()
+    > 문자열의 맨 앞과 맨 뒤에 있는 공백들을 제거한 문자열 객체를 리턴함.
+
+<br>
+
+* 내용을 교체(replace) 하는 메소드
+  * replace(...)
+    > 해당 문자열에 있는 oldChar값을 newChar값으로 대치
+  * replaceAll(String regex, String replacement)
+    > 해당 문자열의 내용 중 regex 정규 표현식에 포함되는 모든 내용 대치
+  * replaceFirst(String regex, String replacement)
+    > regex에 표현된 정규 표현식에 포함되는 첫번째 내용을 replacement로 대치
+
+<br>
+
+* 특정 형식에 맞춰 값을 치환하는 메소드
+  * **static String** format(String format, Object... args)
+    > format에 있는 문자열의 내용 중 변환해야 하는 부분의 내용을 args로 변환
+  * **static String** format(Locale l,String format, Object... args)
+    > Locale타입의 l에 선언된 지역에 맞추어 출력
+    ```java
+      // 아래와 같이 작성 시 한국의 원화 규칙에 맞춰 000단위마다 ,가 찍힘
+      String.format(Locale.KOREA,"₩ %,d",money)
+    ```
+
+<br>
+
+* 대소문자를 바꾸는 메소드
+  * toLowerCase()
+    > 소문자 변경
+  * toLowerCase(Locale locale)
+    > 지역 정보에 맞추어 모든 문자열의 내용을 소문자로 변경
+  * toUpperCase()
+    > 대문자 변경
+  * toUpperCase(Locale locale)
+    > 지역 정보에 맞추어 모든 문자열의 내용을 대문자로 변경
+
+<br>
+
+* 기본 자료형을 문자열로 변환하는 메소드
+  * **static String** valueOf(모든 자료형)
+  *모든 자료형은 null일 경우 toString메소드 사용 불가능 (NullPointerExeception발생) 그럴 때 vlaueOf 사용 시 "null"이라는 문자열 출력해줌*
+
+### immutable(불변의)한 String의 단점을 보완하는 StringBuffer와 StringBuilder
+```java
+  String text="Hello";
+  text = text+" World";
+```
+> String객체는 변하지 않는다.   
+> 즉, 위의 경우에 Hello만 들어있던 객체는 더이상 사용할 수 없고, 버려진다 계속 문자열을 더하면 쓰레기를 계속 만든 다는 것   
+> 이 단점을 보완하기 위해 StringBuffer와 StringBuilder 탄생
+
+* StringBuilder
+  * Thread safe하지 않음
+  * StringBuffer보다 빠르지만 여러 스레드가 동시에 접근할 수 있는 경우 충돌이 생길 수 있음
+* StringBuffer
+  * Thread safe함
+* append()로 문자열 이어붙이기 가능
+  > JDK 5 이상에서 String에 + 연산을 할 시 자동으로 StringBuffer로 변환해 줌 하지만, for문 같이 반복연산에는 자동 변환하지 않으니 필요함.
+** String, StringBuilder, StringBuffer세가지 중 하나의 클래스를 매개변수로 받는 작업 시 CharSequence타입으로 받는 것이 좋음**
+ 
