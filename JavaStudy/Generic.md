@@ -59,7 +59,7 @@ public void wildcardStringMethod(WildcardGeneric<?> c){
   * Wildcard는 **메소드의 매개 변수로만 사용하는 것이 좋다.**
   * 어떤 객체를 wildcard로 선언하고, 그 객체의 값은 가져올 수는 있지만 **wildcard로 객체를 선언했을 때에는 특정 타입으로 값을 지정하는 것은 불가능**
 
-### 제네릭 선언에 사용하는 타입의 범위도 지정 가능하다(Bounded Wildcards).
+### 제네릭 선언에 사용하는 타입의 범위 지정(Bounded Wildcards).
 > 제네릭을 사용할 때 <>안에는 어떤 타입이라도 상관 없으나, wildcard로 사용하려는 타입을 제한할 수 있다.
 > ?대신 **? extends 타입**으로 작성하면 된다.
 > 제네릭 타입의 경계를 지정하는데 사용한다는 의미로 해석.
@@ -70,6 +70,35 @@ public void boundedWildcardMethod(WildcardGeneric<? extends Car> c){ //이렇게
 }
 ```
 ### 메소드를 제네릭하게 선언
+> 와일드카드를 사용하여 메소드를 선언할 때에는 **매개변수로 사용된 객체에 값을 추가할 수 없다는 단점이 있다.**   
+> 하지만 아래와 같이 사용하여 해결할 수 있음.
+```java
+public class WildcardGeneric<W>{
+  W Wildcard;
+  public void setWildcard(W wildcard){
+    this.wildcard = wildcard;
+  }
+  public W getWildcard(){
+    return wildcard;
+  }
+}
+---
+public class GenericWildcardSample{
+  public static void main(String args[]){
+    GenericWildcardSample sample = new GenericWildcardSample();
+  }
+  public <T> void genericMethod(WildcardGeneric<?> c, T addValue){
+    c.setWildcard(addValue);
+    T value = c.getWildcard();
+    System.out.println(value);
+  }
+}
+---
+public void callGenericMethod(){
+  WildcardGeneric<String> wildcard=new WildcardGeneric<String>();
+  genericMethod(wildcard, "Data");
+}
+```
 
 
 
