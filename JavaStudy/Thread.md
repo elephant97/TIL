@@ -84,7 +84,7 @@ public void minus(lock){
 ```
 
 ### Thread를 통제하는 메소드
-* getState()메소드를 통해 쓰레드의 상태를 알 수 있다.
+* **getState()** 메소드를 통해 쓰레드의 상태를 알 수 있다.
   * return 값 (State라는 enum클래스)
     * NEW
       > 쓰레드 객체는 생성되었지만, 아직 시작되지는 않은 상태
@@ -98,3 +98,27 @@ public void minus(lock){
       > 특정 시간만큼 쓰레드가 대기중인 상태
     * TERMINATED
       > 쓰레드가 종료된 상태
+  * Thread가 끝날 때 까지 대기하는 **join()**메소드 의 경우 나노초로 지정할 시 0~999,999사이의 값이 아닌 경우
+    IllegalArgumentException이 발생된다.
+  * **Interrupt()** 메소드는 현재 수행중인 쓰레드를 InterruptedException을 발생시키며 중지시킨다
+  * **isInterrupted()** 메소드를 통해 Interrupt()메소드로 인한 종료가 이뤄진 것인지 확인 가능함.
+  * **interrupted()** 메소드를 통해 현재 쓰레드가 중지되어있는지 **isAllive()** 메소드를 통해 살아있는지 확인 가능
+
+### Object 클래스에 선언 된 쓰레드와 관련있는 메소드들
+* wait()
+  > 다른 쓰레드가 Object 객체에 대한 notify()메소드나 notifyAll() 메소드를 호출할 대 까지 현재 쓰래드가 대기 long timeout    
+  > 매개 변수를 지정할 시 해당 time만큼 기다림
+* notify()
+  > Object 객체의 모니터에 대기하고 있는 단일 쓰레드를 깨움    
+  > 이 메소드를 통해 쓰레드를 깨울 경우, InterruptedException도 발생하지 않으며, wait이후의 문장도 정상적으로 수행됨    
+  > 먼저 대기하고 있는 쓰레드 부터 깨움 여러개인경우 여러번 호출해주어야 함
+* notifyAll()
+  > Object 객체의 모니터에 대기하고 있는 모든 쓰레드를 깨움
+
+### ThreadGroup
+> 쓰레드 그룹은 기본적으로 운영체제의 폴더처럼 뻗어나가는 트리 구조를 가짐
+* enumerate(Thread[] list)
+  > 현재 쓰레드 그룹에 있는 모든 쓰레드를 매개변수로 넘어온 쓰레드 배열에 담음     
+  > Thread 배열의 크기를 activeCount()를 통해 파악 후 그 개수만큼 정하면 된다.
+* list()
+  > 쓰레드 그룹의 상세 정보를 출력
