@@ -28,5 +28,3 @@
 ### LinkedList의 메소드
 * LinkedList의 메소드에는 앞에서부터 또는 뒤에서부터 데이터를 넣거나 빼거나 찾는 메서드들이 First Last 이름으로 붙어 존재함.
 * LinkedList객체를 검색하기 위한 Iterator 객체 중에서는 descendingIterator()을 사용하여 끝에서부터 검색 가능 함
-
-* 
