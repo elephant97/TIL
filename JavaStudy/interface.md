@@ -1,4 +1,4 @@
-# 인터페이스(interface)	:pushpin:
+# 인터페이스(interface) :pushpin:
 
 
 ### 인터페이스란?
