@@ -27,10 +27,10 @@
       * RandomAccess : 목록형 데이터에 보다 빠르게 접근할 수 있도록 임의로 접근하는 알고리즘 적용된다는 것을 지정
 
 ### ArrayList의 생성자
-> ArrayList는 서로 다른 종류의 객체를 넣을 순 있으나, 그렇게 사용하지 않고 여러 종류를 하나의 객체에 담을 때에는
-> 되도록이면 DTO라는 객체를 하나 만들어서 담는 것이 좋다.
-> 초기 크기는 10이며, 10개 이상의 데이터가 들어가면 **크기를 늘리는 작업이 ArrayList 내부에서 자동으로 수행 됨**
-> **ArrayList 크기를 늘리는 작업이 수행되면, 애플리케이션 성능에 영향을 주게 되므로 저장되는 데이터의 크기가**
+> ArrayList는 서로 다른 종류의 객체를 넣을 순 있으나, 그렇게 사용하지 않고 여러 종류를 하나의 객체에 담을 때에는   
+> 되도록이면 DTO라는 객체를 하나 만들어서 담는 것이 좋다.   
+> 초기 크기는 10이며, 10개 이상의 데이터가 들어가면 **크기를 늘리는 작업이 ArrayList 내부에서 자동으로 수행 됨**   
+> **ArrayList 크기를 늘리는 작업이 수행되면, 애플리케이션 성능에 영향을 주게 되므로 저장되는 데이터의 크기가**   
 > **예측 가능하다면 예측 가능한 초기크기를 지정하는 것을 권장함**
 ```java
 ArrayList<String> list = new ArrayList<String>(); //JDK 7부터는 타입을 따로 적지 않고 <>로만 사용 가능
@@ -43,7 +43,7 @@ ArrayList<String> list = new ArrayList<String>(); //JDK 7부터는 타입을 따
   > 매개 변수로 넘어온 initialCapacity 개수만큼의 저장 공간을 갖는 ArrayList를 만듬
 
 ### ArrayList에 데이터 add
-> 하나의 데이터를 담을 때에는 add() 메소드를, Collection을 구현한 객체를 한꺼번에 담을 때에는 addAll()메소드를 사용하면 됨.   
+> 하나의 데이터를 담을 때에는 add() 메소드를, Collection을 구현한 객체를 한꺼번에 담을 때에는 addAll()메소드를 사용하면 됨.    
 > **배열을 복사할 때에는 arraycopy()를 이용하면 Deep copy 처리 가능**   
 > Collection관련 객체를 복사할 일이 있을 때에는 생성자를 이용하거나, addAll() 메소드를 사용할 것
 * add(E e)
@@ -57,8 +57,8 @@ ArrayList<String> list = new ArrayList<String>(); //JDK 7부터는 타입을 따
   > 매개변수로 넘어온 컬렉션 데이터를 index에 지정된 위치부터 담음
 
 ### ArrayList에서 데이터 꺼내기
-> ArrayList 객체에 들어가 있는 데이터의 개수는 size()메소드를 통해 알 수 있다.
-> ArrayList의 저장 공간이 아닌 들어가있는 데이터의 개수를 의미한다.
+> ArrayList 객체에 들어가 있는 데이터의 개수는 size()메소드를 통해 알 수 있다.   
+> ArrayList의 저장 공간이 아닌 들어가있는 데이터의 개수를 의미한다.   
 > **ArrayList는 중복된 데이터를 넣을 수 있음**
 * size()
   > 데이터의 개수 리턴
