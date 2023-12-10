@@ -1,4 +1,4 @@
-# enum	:pushpin:
+# enum :pushpin:
 
 > 고정 된 값은 '상수' 라고 부른다.
 
