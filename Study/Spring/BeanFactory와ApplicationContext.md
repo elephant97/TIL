@@ -1,5 +1,20 @@
+# BeanFactory와 ApplicationContect
+김영한님 Spring 핵심원리 - 기본편
+
+<br>
 
 
+### BeanFactory
+* 스프링 컨테이너의 최상위 인터페이스다.
+* 스프링 빈을 관리하고 조회하는 역할을 담당한다.
+* `getBean()` 을 제공한다.
+
+### ApplicationContext
+* BeanFactory 기능을 모두 상속받아서 제공한다.
+* 빈을 관리하고 검색하는 기능을 BeanFactory가 제공해줌
+* 애플리케이션을 개발할 때는 빈을 관리하고 조회하는 기능은 물론이고, 수 많은 부가기능이 필요할 때 사용.
+
+### ApplicatonContext가 제공하는 부가기능
 * 메시지소스를 활용한 국제화 기능
   * 예를 들어서 한국에서 들어오면 한국어로, 영어권에서 들어오면 영어로 출력
 * 환경변수
