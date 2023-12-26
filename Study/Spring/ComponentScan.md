@@ -47,3 +47,39 @@
   * 스프링 설정 정보에서 사용
   * 스프링 설정 정보로 인식하고, 스프링 빈이 싱글톤을 유지하도록 추가 처리함
 *어노테이션에는 상속관계가 없으며 특정 어노테이션을 들고있는 것을 인식할 수 있는 것은 자바가 아닌 스프링에서 지원하는 기능*
+
+### 필터
+* includeFilters
+  * 컴포넌트 스캔 대상을 추가로 지정한다.
+* excludeFilters
+  * 컴포넌트 스캔에서 제외할 대상을 지정한다.
+
+### FilterType 옵션
+* ANNOTATION: 기본값, 애노테이션을 인식해서 동작한다.
+  * ex) `org.example.SomeAnnotation`
+* ASSIGNABLE_TYPE: 지정한 타입과 자식 타입을 인식해서 동작한다.
+  * ex) `org.example.SomeClass`
+* ASPECTJ: AspectJ 패턴 사용
+  * ex) `org.example..*Service+`
+* REGEX: 정규 표현식
+  * ex) `org\.example\.Default.*`
+* CUSTOM: `TypeFilter` 이라는 인터페이스를 구현해서 처리
+  * ex) `org.example.MyTypeFilter`
+
+ ### 중복 등록과 충돌
+ * 자동 빈 등록 vs 자동 빈 등록 에서의 충돌
+   * 컴포넌트 스캔에 의해 자동으로 스프링 빈이 등록되는데, 그 이름이 같은 경우 스프링은 오류 발생 시킴
+     * `ConflictingBeanDefinitionException` 예외 발생
+ * 수동 빈 등록 vs 자동 빈 등록 에서의 충돌
+   * 수동 빈 등록이 우선권을 가진다. (수동 빈이 자동 빈을 오버라이딩 해버린다.)
+   * 수동 빈 등록시 남는 로그**
+     ```text
+      Overriding bean definition for bean 'memoryMemberRepository' with a different
+      definition: replacing
+     ```
+ *이런 설정이 꼬여서 발생하는 경우를 방어하기 위해 스프링 부터에서는 수동 빈 등록과 자동 빈 등록에서 충돌이 발생하는 경우 오류가 발생하도록 기본 값을 바꿈*
+   * 수동 빈 등록, 자동 빈 등록 오류시 스프링 부트 에러
+     ```text
+       Consider renaming one of the beans or enabling overriding by setting
+       spring.main.allow-bean-definition-overriding=true
+     ```
