@@ -38,7 +38,7 @@
   * 스프링 MVC 컨트롤러에서 사용
 * `@Service`
   * 스프링 비즈니스 로직에서 사용
-*`@Repository`
+* `@Repository`
   * 스프링 데이터 접근 계층에서 사용
 * `@Configuration`
   * 스프링 설정 정보에서 사용
