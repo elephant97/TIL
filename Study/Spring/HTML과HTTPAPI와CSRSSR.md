@@ -40,3 +40,23 @@
 * **참고**
   * React, Vue.js를 CSR + SSR 동시에 지원하는 웹 프레임워크도 있음
   * SSR을 사용하더라도, 자바스크립트를 사용해서 화면 일부를 동적으로 변경 가능
+
+### HTTP 요청 데이터 
+> 주로 다음 3가지 방법을 사용 
+* **GET - 쿼리 파라미터**
+  * /url**?username=hello&age=20**
+  * 메시지 바디 없이, URL의 쿼리 파라미터에 데이터를 포함해서 전달
+  * 예) 검색, 필터, 페이징등에서 많이 사용하는 방식
+* **POST - HTML Form**
+  * content-type
+    * application/x-www-form-urlencoded
+  * 메시지 바디에 쿼리 파리미터 형식으로 전달 username=hello&age=20
+  * 예) 회원 가입, 상품 주문, HTML Form 사용
+* **HTTP message body**에 데이터를 직접 담아서 요청
+  * HTTP API에서 주로 사용, JSON, XML, TEXT
+* 데이터 형식은 주로 JSON 사용 POST, PUT, PATCH
+
+### HTTP 요청 데이터 - GET 쿼리 파라미터
+* 쿼리파라미터는URL에다음과같이 `?` 를시작으로보낼수있다.
+* 추가파라미터는 `&` 로구분하면된다.
+  * http://localhost:8080/request-param?username=hello&age=20
