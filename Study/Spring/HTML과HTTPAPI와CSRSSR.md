@@ -60,3 +60,11 @@
 * 쿼리파라미터는URL에다음과같이 `?` 를시작으로보낼수있다.
 * 추가파라미터는 `&` 로구분하면된다.
   * `http://localhost:8080/request-param?username=hello&age=20`
+
+### HTTP 요청 데이터 - POST HTML Form
+> 주로 회원 가입, 상품 주문 등에서 사용하는 방식이다.
+* **특징**
+* content-type
+  * `application/x-www-form-urlencoded`
+* 메시지 바디에 쿼리 파리미터 형식으로 데이터를 전달한다.
+  * `username=hello&age=20`
