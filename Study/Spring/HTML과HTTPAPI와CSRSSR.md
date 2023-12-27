@@ -59,4 +59,4 @@
 ### HTTP 요청 데이터 - GET 쿼리 파라미터
 * 쿼리파라미터는URL에다음과같이 `?` 를시작으로보낼수있다.
 * 추가파라미터는 `&` 로구분하면된다.
-  * http://localhost:8080/request-param?username=hello&age=20
+  * `http://localhost:8080/request-param?username=hello&age=20`
