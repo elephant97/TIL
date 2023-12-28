@@ -62,3 +62,13 @@
   * 기본 문자처리: `StringHttpMessageConverter`
   * 기본 객체처리: `MappingJackson2HttpMessageConverter`
   * byte 처리 등등 기타 여러 HttpMessageConverter가 기본으로 등록되어 있음
+* **스프링 MVC는 다음의 경우에 HTTP 메시지 컨버터를 적용한다.**
+  * HTTP 요청
+    * `@RequestBody` , `HttpEntity(RequestEntity)`
+  * HTTP 응답
+    * `@ResponseBody` , `HttpEntity(ResponseEntity)`
+* HTTP 메시지 컨버터는 HTTP 요청, HTTP 응답 둘 다 사용된다.
+  * `canRead()` , `canWrite()`
+    * 메시지 컨버터가 해당 클래스, 미디어타입을 지원하는지 체크
+  * `read()` , `write()`
+     * 메시지 컨버터를 통해서 메시지를 읽고 쓰는 기능
