@@ -18,3 +18,17 @@
   * HTTP API에서 주로 사용, JSON, XML, TEXT
   * 데이터 형식은 주로 JSON 사용
   * POST, PUT, PATCH
+
+### 요청 파라미터 - 쿼리 파라미터, HTML Form
+> `HttpServletRequest` 의 `request.getParameter()` 를 사용하면 다음 두가지 요청 파라미터를 조회할 수 있다.
+* **GET, 쿼리 파라미터 전송**
+  ```
+  http://localhost:8080/request-param?username=hello&age=20
+  ```
+* **POST, HTML Form 전송**
+  ```
+  POST /request-param ...
+  content-type: application/x-www-form-urlencoded
+  username=hello&age=20
+  ```
+* GET 쿼리 파리미터 전송 방식이든, POST HTML Form 전송 방식이든 둘다 형식이 같으므로 구분없이 조회할 수 있 다.
