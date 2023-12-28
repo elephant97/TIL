@@ -71,5 +71,28 @@
   * `canRead()` , `canWrite()`
     * 메시지 컨버터가 해당 클래스, 미디어타입을 지원하는지 체크
   * `read()` , `write()`
-     * 메시지 컨버터를 통해서 메시지를 읽고 쓰는 기능       
+     * 메시지 컨버터를 통해서 메시지를 읽고 쓰는 기능
+
+<br>
+     
 *스프링 부트는 다양한 메시지 컨버터를 제공하는데, 대상 클래스 타입과 미디어 타입 둘을 체크해서 사용여부를 결정한 다. 만약 만족하지 않으면 다음 메시지 컨버터로 우선순위가 넘어간다.*
+
+### 주요 메세지 컨버터
+* `ByteArrayHttpMessageConverter`
+  * byte[] 데이터를 처리한다.
+  * 클래스 타입: `byte[]` , 미디어타입: `*/*`
+  * 요청 예) `@RequestBody byte[] data`
+  * 응답 예) `@ResponseBody return byte[]`
+  * 쓰기 미디어타입 `application/octet-stream`
+* `StringHttpMessageConverter`
+  * String 문자로 데이터를 처리한다.
+  * 클래스 타입: `String` , 미디어타입: `*/*`
+  * 요청 예) `@RequestBody String data`
+  * 응답 예) `@ResponseBody return "ok"`
+  * 쓰기 미디어타입 `text/plain`
+* `MappingJackson2HttpMessageConverter`
+  * application/json
+  * 클래스 타입: 객체 또는 `HashMap` , 미디어타입 `application/json` 관련
+  * 요청 예) `@RequestBody HelloData data`
+  * 응답 예) `@ResponseBody return helloData`
+  * 쓰기 미디어타입 `application/json` 관련
