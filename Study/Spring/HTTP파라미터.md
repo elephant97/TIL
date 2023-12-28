@@ -96,3 +96,11 @@
   * 요청 예) `@RequestBody HelloData data`
   * 응답 예) `@ResponseBody return helloData`
   * 쓰기 미디어타입 `application/json` 관련
+
+### HTTP 요청 데이터 읽기
+* HTTP 요청이 오고, 컨트롤러에서 `@RequestBody` , `HttpEntity` 파라미터를 사용한다.
+* 메시지 컨버터가 메시지를 읽을 수 있는지 확인하기 위해 `canRead()` 를 호출한다.
+  * 대상 클래스 타입을 지원하는가.
+    * 예) `@RequestBody` 의 대상 클래스 ( `byte[]` , `String` , `HelloData` )
+  * HTTP 요청의 Content-Type 미디어 타입을 지원하는가. 예) `text/plain` , `application/json` , `*/*`
+* `canRead()` 조건을 만족하면 `read()` 를 호출해서 객체 생성하고, 반환한다.
