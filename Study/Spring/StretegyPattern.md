@@ -1,5 +1,5 @@
 # Strategy Pattern(전략패턴)
-김영한님 Spring 핵심원리 - 기본편
+김영한님 Spring 핵심원리 - 고급편
 
 <br>
 
