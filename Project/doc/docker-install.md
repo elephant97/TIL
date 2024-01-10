@@ -23,6 +23,6 @@
      sudo systemctl enable docker
    ```
 6. 설치 확인 : 테스트 컨테이너를 실행하여 확인
-  ```
+   ```
       sudo docker run hello-world
-  ```
+   ```
