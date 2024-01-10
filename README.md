@@ -7,7 +7,7 @@
    * [melody-market oven](https://ovenapp.io/project/QRxPvZWlaH4D6fHqZZSQRSxJp4UWsMvi#WcRRp) 
 
 * [프로젝트를 위한 유익한 자료들]
-  *  [자료모음](../Project/doc/서버관리.md)
+  *  [자료모음](./Project/doc/서버관리.md)
     
 ---
 ## 날짜 별 정리 📅
