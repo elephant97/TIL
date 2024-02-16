@@ -3,8 +3,6 @@
 ## 프로젝트
 * 내 프로젝트 바로가기
    * [melody-market](https://github.com/f-lab-edu/melody-market)
-* 화면 목업
-   * [melody-market oven](https://ovenapp.io/project/QRxPvZWlaH4D6fHqZZSQRSxJp4UWsMvi#WcRRp) 
 
 * [프로젝트를 위한 유익한 자료들]
   *  [자료모음](./Project/doc)
