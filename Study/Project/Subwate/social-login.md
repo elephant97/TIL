@@ -2,6 +2,7 @@
 
 ### [kakao login](https://github.com/subwate/subwate-back/pull/6)
 > 기능: 사용자는 kakao 계정으로 로그인 및 회원가입을 할 수 있다.
+* [x] 카카오 client id 생성 및 응답 uri 설정
 * [x] 카카오 콜백 함수로 return 받도록 컨트롤러 생성
 * [x] 카카오 API 응답에 따른 처리 ( 네트워크 오류 및 인증 실패)
 * [x] 올바른 응답 반환 시 user table에 정보 존재여부 확인하여 회원가입 필요한 유저인지 확인
@@ -12,3 +13,5 @@
 * [x] ci/cd 시 keys.properties secret으로 불러와서 작성되도록 수정
 
 ### Google Login 
+> 기능: 사용자는 google 계정으로 로그인 및 회원가입 할 수 있다.
+* google client id 및 응답 uri 설정
